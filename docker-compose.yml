@@ -1,0 +1,13 @@
+openid:
+  image: "dmlb2000/docker-django-openid"
+  ports:
+   - "8000:8080"
+  links:
+   - openid-mysql:mysql
+openid-mysql:
+  image: "mysql"
+  environment:
+    MYSQL_ROOT_PASSWORD: "password"
+    MYSQL_DATABASE: "openid"
+    MYSQL_USER: "openid"
+    MYSQL_PASSWORD: "openid"
